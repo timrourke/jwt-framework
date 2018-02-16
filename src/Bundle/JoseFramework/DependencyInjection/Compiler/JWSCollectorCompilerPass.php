@@ -19,10 +19,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
 
-/**
- * Class JWSCollectorCompilerPass.
- */
-final class JWSCollectorCompilerPass implements CompilerPassInterface
+class JWSCollectorCompilerPass implements CompilerPassInterface
 {
     /**
      * {@inheritdoc}
@@ -36,9 +33,9 @@ final class JWSCollectorCompilerPass implements CompilerPassInterface
         $definition = $container->getDefinition(JWSCollector::class);
 
         $services = [
-            'addJWSBuilder' => 'jose.jws_builder',
+            'addJWSBuilder'  => 'jose.jws_builder',
             'addJWSVerifier' => 'jose.jws_verifier',
-            'addJWSLoader' => 'jose.jws_loader',
+            'addJWSLoader'   => 'jose.jws_loader',
         ];
         foreach ($services as $method => $tag) {
             $this->collectServices($method, $tag, $definition, $container);

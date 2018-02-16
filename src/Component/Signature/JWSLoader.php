@@ -18,7 +18,7 @@ use Jose\Component\Core\JWK;
 use Jose\Component\Core\JWKSet;
 use Jose\Component\Signature\Serializer\JWSSerializerManager;
 
-final class JWSLoader
+class JWSLoader
 {
     /**
      * @var JWSVerifier
@@ -26,7 +26,7 @@ final class JWSLoader
     private $jwsVerifier;
 
     /**
-     * @var HeaderCheckerManager
+     * @var HeaderCheckerManager|null
      */
     private $headerCheckerManager;
 
@@ -58,9 +58,9 @@ final class JWSLoader
     }
 
     /**
-     * @return HeaderCheckerManager
+     * @return HeaderCheckerManager|null
      */
-    public function getHeaderCheckerManager(): HeaderCheckerManager
+    public function getHeaderCheckerManager(): ?HeaderCheckerManager
     {
         return $this->headerCheckerManager;
     }
@@ -79,9 +79,9 @@ final class JWSLoader
      * @param null|int    $signature
      * @param null|string $payload
      *
-     * @return JWS
-     *
      * @throws \Exception
+     *
+     * @return JWS
      */
     public function loadAndVerifyWithKey(string $token, JWK $key, ?int &$signature, ?string $payload = null): JWS
     {
@@ -96,16 +96,16 @@ final class JWSLoader
      * @param null|int    $signature
      * @param null|string $payload
      *
-     * @return JWS
-     *
      * @throws \Exception
+     *
+     * @return JWS
      */
     public function loadAndVerifyWithKeySet(string $token, JWKSet $keyset, ?int &$signature, ?string $payload = null): JWS
     {
         try {
             $jws = $this->serializerManager->unserialize($token);
             $nbSignatures = $jws->countSignatures();
-            for ($i = 0; $i < $nbSignatures; ++$i) {
+            for ($i = 0; $i < $nbSignatures; $i++) {
                 if ($this->processSignature($jws, $keyset, $i, $payload)) {
                     $signature = $i;
 

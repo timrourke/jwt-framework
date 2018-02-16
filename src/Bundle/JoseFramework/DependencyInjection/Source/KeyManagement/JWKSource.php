@@ -15,15 +15,12 @@ namespace Jose\Bundle\JoseFramework\DependencyInjection\Source\KeyManagement;
 
 use Jose\Bundle\JoseFramework\DependencyInjection\Source\KeyManagement\JWKSource\JWKSource as JWKSourceInterface;
 use Jose\Bundle\JoseFramework\DependencyInjection\Source\Source;
-use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
+use Symfony\Component\Config\Definition\Builder\NodeDefinition;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
-/**
- * Class JWKSource.
- */
-final class JWKSource implements Source
+class JWKSource implements Source
 {
     /**
      * @var null|JWKSourceInterface[]
@@ -59,14 +56,21 @@ final class JWKSource implements Source
     /**
      * {@inheritdoc}
      */
-    public function getNodeDefinition(ArrayNodeDefinition $node)
+    public function getNodeDefinition(NodeDefinition $node)
     {
         $sourceNodeBuilder = $node
             ->children()
                 ->arrayNode('keys')
+                    ->treatFalseLike([])
+                    ->treatNullLike([])
                     ->useAttributeAsKey('name')
-                    ->prototype('array')
-                        ->performNoDeepMerging()
+                    ->arrayPrototype()
+                        ->validate()
+                            ->ifTrue(function ($config) {
+                                return count($config) !== 1;
+                            })
+                            ->thenInvalid('One key type must be set.')
+                        ->end()
                         ->children();
         foreach ($this->getJWKSources() as $name => $source) {
             $sourceNode = $sourceNodeBuilder->arrayNode($name)->canBeUnset();
@@ -83,7 +87,9 @@ final class JWKSource implements Source
     }
 
     /**
-     * @return JWKSource[]
+     * @throws \Exception
+     *
+     * @return JWKSourceInterface[]
      */
     private function getJWKSources(): array
     {
@@ -99,6 +105,9 @@ final class JWKSource implements Source
         $jwkSources = [];
         foreach (array_keys($services) as $id) {
             $factory = $tempContainer->get($id);
+            if (!$factory instanceof JWKSourceInterface) {
+                throw new \InvalidArgumentException();
+            }
             $jwkSources[str_replace('-', '_', $factory->getKey())] = $factory;
         }
 

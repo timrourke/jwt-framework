@@ -11,7 +11,7 @@ declare(strict_types=1);
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Jose\Test\Unit\Keys;
+namespace Jose\Component\KeyManagement\Tests\Keys;
 
 use Jose\Component\KeyManagement\JWKFactory;
 use PHPUnit\Framework\TestCase;
@@ -20,7 +20,7 @@ use PHPUnit\Framework\TestCase;
  * @group OctKeys
  * @group Unit
  */
-final class OctKeysTest extends TestCase
+class OctKeysTest extends TestCase
 {
     /**
      * @expectedException \InvalidArgumentException

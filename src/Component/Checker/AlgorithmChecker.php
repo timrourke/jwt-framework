@@ -13,10 +13,7 @@ declare(strict_types=1);
 
 namespace Jose\Component\Checker;
 
-/**
- * Class AlgorithmChecker.
- */
-final class AlgorithmChecker implements HeaderChecker
+class AlgorithmChecker implements HeaderChecker
 {
     private const HEADER_NAME = 'alg';
 

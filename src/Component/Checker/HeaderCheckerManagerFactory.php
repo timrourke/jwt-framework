@@ -13,10 +13,7 @@ declare(strict_types=1);
 
 namespace Jose\Component\Checker;
 
-/**
- * Class HeaderCheckerManagerFactory.
- */
-final class HeaderCheckerManagerFactory
+class HeaderCheckerManagerFactory
 {
     /**
      * @var HeaderChecker[]

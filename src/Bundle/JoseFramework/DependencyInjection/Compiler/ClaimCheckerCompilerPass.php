@@ -18,10 +18,7 @@ use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
 
-/**
- * Class ClaimCheckerCompilerPass.
- */
-final class ClaimCheckerCompilerPass implements CompilerPassInterface
+class ClaimCheckerCompilerPass implements CompilerPassInterface
 {
     /**
      * {@inheritdoc}

@@ -21,10 +21,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
 
-/**
- * Class X5U.
- */
-final class X5U extends AbstractSource implements JWKSetSource
+class X5U extends AbstractSource implements JWKSetSource
 {
     /**
      * {@inheritdoc}
@@ -70,7 +67,7 @@ final class X5U extends AbstractSource implements JWKSetSource
                     ->treatFalseLike([])
                     ->info('Header key/value pairs added to the request.')
                     ->useAttributeAsKey('name')
-                    ->prototype('variable')->end()
+                    ->variablePrototype()->end()
                 ->end()
             ->end();
     }

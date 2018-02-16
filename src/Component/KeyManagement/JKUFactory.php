@@ -18,10 +18,7 @@ use Http\Message\RequestFactory;
 use Jose\Component\Core\Converter\JsonConverter;
 use Jose\Component\Core\JWKSet;
 
-/**
- * Class JKUFactory.
- */
-final class JKUFactory extends UrlKeySetFactory
+class JKUFactory extends UrlKeySetFactory
 {
     private $jsonConverter;
 

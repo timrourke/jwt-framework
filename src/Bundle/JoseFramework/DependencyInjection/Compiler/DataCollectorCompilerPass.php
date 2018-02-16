@@ -18,10 +18,7 @@ use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
 
-/**
- * Class DataCollectorCompilerPass.
- */
-final class DataCollectorCompilerPass implements CompilerPassInterface
+class DataCollectorCompilerPass implements CompilerPassInterface
 {
     /**
      * {@inheritdoc}

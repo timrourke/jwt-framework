@@ -23,9 +23,9 @@ use FG\ASN1\Universal\Sequence;
 use Jose\Component\Core\JWK;
 
 /**
- * Class RSAKey.
+ * @internal
  */
-final class RSAKey
+class RSAKey
 {
     /**
      * @var Sequence
@@ -251,6 +251,8 @@ final class RSAKey
     }
 
     /**
+     * @throws \Exception
+     *
      * @return string
      */
     public function toPEM(): string

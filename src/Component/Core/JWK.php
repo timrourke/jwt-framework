@@ -15,10 +15,7 @@ namespace Jose\Component\Core;
 
 use Base64Url\Base64Url;
 
-/**
- * Class JWK.
- */
-final class JWK implements \JsonSerializable
+class JWK implements \JsonSerializable
 {
     /**
      * @var array

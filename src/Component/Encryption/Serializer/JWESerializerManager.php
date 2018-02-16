@@ -15,10 +15,7 @@ namespace Jose\Component\Encryption\Serializer;
 
 use Jose\Component\Encryption\JWE;
 
-/**
- * Class JWESerializationManager.
- */
-final class JWESerializerManager
+class JWESerializerManager
 {
     /**
      * @var JWESerializer[]

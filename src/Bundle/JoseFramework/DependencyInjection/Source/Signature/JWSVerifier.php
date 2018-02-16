@@ -13,16 +13,13 @@ declare(strict_types=1);
 
 namespace Jose\Bundle\JoseFramework\DependencyInjection\Source\Signature;
 
-use Jose\Component\Signature\JWSVerifierFactory;
 use Jose\Component\Signature\JWSVerifier as JWSVerifierService;
+use Jose\Component\Signature\JWSVerifierFactory;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
 
-/**
- * Class JWSVerifier.
- */
-final class JWSVerifier extends AbstractSignatureSource
+class JWSVerifier extends AbstractSignatureSource
 {
     /**
      * {@inheritdoc}

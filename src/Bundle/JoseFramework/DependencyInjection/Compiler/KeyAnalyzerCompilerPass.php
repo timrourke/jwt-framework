@@ -18,10 +18,7 @@ use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
 
-/**
- * Class KeyAnalyzerCompilerPass.
- */
-final class KeyAnalyzerCompilerPass implements CompilerPassInterface
+class KeyAnalyzerCompilerPass implements CompilerPassInterface
 {
     /**
      * {@inheritdoc}

@@ -19,10 +19,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
-/**
- * Class SecretKeyGeneratorCommand.
- */
-final class SecretKeyGeneratorCommand extends GeneratorCommand
+class SecretKeyGeneratorCommand extends GeneratorCommand
 {
     /**
      * {@inheritdoc}

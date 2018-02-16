@@ -13,10 +13,7 @@ declare(strict_types=1);
 
 namespace Jose\Component\Encryption\Algorithm\KeyEncryption;
 
-/**
- * Class A256GCMKW.
- */
-final class A256GCMKW extends AESGCMKW
+class A256GCMKW extends AESGCMKW
 {
     /**
      * {@inheritdoc}

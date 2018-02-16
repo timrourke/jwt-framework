@@ -20,10 +20,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
 
-/**
- * Class KeyFile.
- */
-final class KeyFile extends AbstractSource implements JWKSource
+class KeyFile extends AbstractSource implements JWKSource
 {
     /**
      * {@inheritdoc}
@@ -73,7 +70,7 @@ final class KeyFile extends AbstractSource implements JWKSource
                     ->info('Additional values to be added to the key.')
                     ->defaultValue([])
                     ->useAttributeAsKey('key')
-                    ->prototype('variable')->end()
+                    ->variablePrototype()->end()
                 ->end()
             ->end();
     }

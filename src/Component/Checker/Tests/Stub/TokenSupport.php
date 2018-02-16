@@ -16,10 +16,7 @@ namespace Jose\Component\Checker\Tests\Stub;
 use Jose\Component\Checker\TokenTypeSupport;
 use Jose\Component\Core\JWT;
 
-/**
- * Class TokenSupport.
- */
-final class TokenSupport implements TokenTypeSupport
+class TokenSupport implements TokenTypeSupport
 {
     /**
      * {@inheritdoc}

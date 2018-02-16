@@ -16,15 +16,12 @@ namespace Jose\Bundle\JoseFramework\DependencyInjection\Source\KeyManagement;
 use Jose\Bundle\JoseFramework\Controller\JWKSetController;
 use Jose\Bundle\JoseFramework\Controller\JWKSetControllerFactory;
 use Jose\Bundle\JoseFramework\DependencyInjection\Source\Source;
-use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
+use Symfony\Component\Config\Definition\Builder\NodeDefinition;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
 
-/**
- * Class JKUriSource.
- */
-final class JWKUriSource implements Source
+class JWKUriSource implements Source
 {
     /**
      * {@inheritdoc}
@@ -56,22 +53,23 @@ final class JWKUriSource implements Source
     /**
      * {@inheritdoc}
      */
-    public function getNodeDefinition(ArrayNodeDefinition $node)
+    public function getNodeDefinition(NodeDefinition $node)
     {
         $node
             ->children()
                 ->arrayNode('jwk_uris')
+                    ->treatFalseLike([])
+                    ->treatNullLike([])
                     ->useAttributeAsKey('name')
-                    ->prototype('array')
-                        ->performNoDeepMerging()
+                    ->arrayPrototype()
                         ->children()
                             ->scalarNode('id')
                                 ->info('The service ID of the Key Set to share.')
-                                ->defaultNull()
+                                ->isRequired()
                             ->end()
                             ->scalarNode('path')
                                 ->info('To share the JWKSet, then set a valid path (e.g. "/jwkset.json").')
-                                ->defaultNull()
+                                ->isRequired()
                             ->end()
                             ->integerNode('max_age')
                                 ->info('When share, this value indicates how many seconds the HTTP client should keep the key in cache. Default is 21600 = 6 hours.')

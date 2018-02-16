@@ -22,7 +22,7 @@ use Jose\Component\Encryption\Algorithm\KeyEncryption\Dir;
  *
  * @group Unit
  */
-final class DirAlgorithmTest extends EncryptionTest
+class DirAlgorithmTest extends EncryptionTest
 {
     /**
      * @expectedException \InvalidArgumentException
@@ -43,7 +43,7 @@ final class DirAlgorithmTest extends EncryptionTest
     {
         $key = JWK::create([
             'kty' => 'oct',
-            'k' => Base64Url::encode('ABCD'),
+            'k'   => Base64Url::encode('ABCD'),
         ]);
 
         $dir = new Dir();

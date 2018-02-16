@@ -16,10 +16,7 @@ namespace Jose\Component\Signature\Algorithm;
 use Base64Url\Base64Url;
 use Jose\Component\Core\JWK;
 
-/**
- * Class EdDSA.
- */
-final class EdDSA implements SignatureAlgorithm
+class EdDSA implements SignatureAlgorithm
 {
     /**
      * {@inheritdoc}

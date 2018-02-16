@@ -16,10 +16,7 @@ namespace Jose\Component\Encryption\Algorithm\KeyEncryption;
 use Base64Url\Base64Url;
 use Jose\Component\Core\JWK;
 
-/**
- * Class Dir.
- */
-final class Dir implements DirectEncryption
+class Dir implements DirectEncryption
 {
     /**
      * {@inheritdoc}

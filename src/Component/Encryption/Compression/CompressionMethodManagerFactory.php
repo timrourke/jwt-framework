@@ -13,10 +13,7 @@ declare(strict_types=1);
 
 namespace Jose\Component\Encryption\Compression;
 
-/**
- * Class CompressionMethodManagerFactory.
- */
-final class CompressionMethodManagerFactory
+class CompressionMethodManagerFactory
 {
     /**
      * @var CompressionMethod[]

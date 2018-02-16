@@ -16,10 +16,7 @@ namespace Jose\Component\Encryption;
 use Jose\Component\Core\AlgorithmManagerFactory;
 use Jose\Component\Encryption\Compression\CompressionMethodManagerFactory;
 
-/**
- * Class JWEDecrypterFactory.
- */
-final class JWEDecrypterFactory
+class JWEDecrypterFactory
 {
     /**
      * @var AlgorithmManagerFactory

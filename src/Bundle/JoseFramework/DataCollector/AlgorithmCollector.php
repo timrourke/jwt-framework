@@ -21,7 +21,7 @@ use Jose\Component\Signature\Algorithm\SignatureAlgorithm;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-final class AlgorithmCollector implements Collector
+class AlgorithmCollector implements Collector
 {
     /**
      * @var AlgorithmManagerFactory
@@ -59,8 +59,8 @@ final class AlgorithmCollector implements Collector
         }
 
         $data['algorithm']['types'] = [
-            'signature' => $signatureAlgorithms,
-            'key_encryption' => $keyEncryptionAlgorithms,
+            'signature'          => $signatureAlgorithms,
+            'key_encryption'     => $keyEncryptionAlgorithms,
             'content_encryption' => $contentEncryptionAlgorithms,
         ];
     }

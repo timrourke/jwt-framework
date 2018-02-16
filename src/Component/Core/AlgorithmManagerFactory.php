@@ -13,10 +13,7 @@ declare(strict_types=1);
 
 namespace Jose\Component\Core;
 
-/**
- * Class AlgorithmManagerFactory.
- */
-final class AlgorithmManagerFactory
+class AlgorithmManagerFactory
 {
     /**
      * @var array

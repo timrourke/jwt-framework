@@ -15,10 +15,7 @@ namespace Jose\Component\Encryption;
 
 use Jose\Component\Core\JWT;
 
-/**
- * Class JWE.
- */
-final class JWE implements JWT
+class JWE implements JWT
 {
     /**
      * @var Recipient[]

@@ -18,10 +18,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-/**
- * Class X509CertificateLoaderCommand.
- */
-final class X509CertificateLoaderCommand extends GeneratorCommand
+class X509CertificateLoaderCommand extends GeneratorCommand
 {
     /**
      * {@inheritdoc}

@@ -16,10 +16,7 @@ namespace Jose\Component\Signature;
 use Jose\Component\Checker\HeaderCheckerManagerFactory;
 use Jose\Component\Signature\Serializer\JWSSerializerManagerFactory;
 
-/**
- * Class JWSLoaderFactory.
- */
-final class JWSLoaderFactory
+class JWSLoaderFactory
 {
     /**
      * @var JWSVerifierFactory

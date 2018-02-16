@@ -19,10 +19,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
-/**
- * Class GetThumbprintCommand.
- */
-final class GetThumbprintCommand extends ObjectOutputCommand
+class GetThumbprintCommand extends ObjectOutputCommand
 {
     /**
      * {@inheritdoc}

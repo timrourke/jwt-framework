@@ -20,10 +20,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
 
-/**
- * Class Values.
- */
-final class Values extends AbstractSource implements JWKSource
+class Values extends AbstractSource implements JWKSource
 {
     /**
      * {@inheritdoc}
@@ -63,7 +60,7 @@ final class Values extends AbstractSource implements JWKSource
                     ->info('Values of the key.')
                     ->isRequired()
                     ->useAttributeAsKey('key')
-                    ->prototype('variable')->end()
+                    ->variablePrototype()->end()
                 ->end()
             ->end();
     }

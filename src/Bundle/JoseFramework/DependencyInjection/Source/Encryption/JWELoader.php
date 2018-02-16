@@ -14,17 +14,14 @@ declare(strict_types=1);
 namespace Jose\Bundle\JoseFramework\DependencyInjection\Source\Encryption;
 
 use Jose\Bundle\JoseFramework\DependencyInjection\Source\Source;
-use Jose\Component\Encryption\JWELoaderFactory;
 use Jose\Component\Encryption\JWELoader as JWELoaderService;
-use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
+use Jose\Component\Encryption\JWELoaderFactory;
+use Symfony\Component\Config\Definition\Builder\NodeDefinition;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
 
-/**
- * Class JWELoader.
- */
-final class JWELoader implements Source
+class JWELoader implements Source
 {
     /**
      * {@inheritdoc}
@@ -61,7 +58,7 @@ final class JWELoader implements Source
         }
     }
 
-    public function getNodeDefinition(ArrayNodeDefinition $node)
+    public function getNodeDefinition(NodeDefinition $node)
     {
         $node
             ->children()

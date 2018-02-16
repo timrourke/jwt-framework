@@ -15,18 +15,16 @@ namespace Jose\Bundle\JoseFramework\DependencyInjection\Source\Checker;
 
 use Jose\Bundle\JoseFramework\DependencyInjection\Compiler;
 use Jose\Bundle\JoseFramework\DependencyInjection\Source\Source;
+use Jose\Bundle\JoseFramework\DependencyInjection\Source\SourceWithCompilerPasses;
 use Jose\Component\Checker\ClaimCheckerManagerFactory;
 use Jose\Component\Checker\HeaderCheckerManagerFactory;
-use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
+use Symfony\Component\Config\Definition\Builder\NodeDefinition;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
-/**
- * Class CheckerSource.
- */
-final class CheckerSource implements Source
+class CheckerSource implements SourceWithCompilerPasses
 {
     /**
      * @var Source[]
@@ -63,22 +61,27 @@ final class CheckerSource implements Source
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../../../Resources/config'));
         $loader->load('checkers.yml');
 
-        foreach ($this->sources as $source) {
-            $source->load($configs['checkers'], $container);
+        if (array_key_exists('checkers', $configs)) {
+            foreach ($this->sources as $source) {
+                $source->load($configs['checkers'], $container);
+            }
         }
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getNodeDefinition(ArrayNodeDefinition $node)
+    public function getNodeDefinition(NodeDefinition $node)
     {
         if (!$this->isEnabled()) {
             return;
         }
         $childNode = $node
             ->children()
-                ->arrayNode($this->name());
+                ->arrayNode($this->name())
+                    ->addDefaultsIfNotSet()
+                    ->treatFalseLike([])
+                    ->treatNullLike([]);
 
         foreach ($this->sources as $source) {
             $source->getNodeDefinition($childNode);

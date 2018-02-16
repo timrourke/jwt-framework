@@ -19,12 +19,10 @@ use Jose\Component\Signature\Algorithm\EdDSA;
 use Jose\Component\Signature\JWS;
 
 /**
- * Class EdDSASignatureTest.
- *
  * @group EdDSA
  * @group Unit
  */
-final class EdDSASignatureTest extends SignatureTest
+class EdDSASignatureTest extends SignatureTest
 {
     /**
      * @see https://tools.ietf.org/html/draft-ietf-jose-cfrg-curves-00#appendix-A.5
@@ -34,8 +32,8 @@ final class EdDSASignatureTest extends SignatureTest
         $key = JWK::create([
             'kty' => 'OKP',
             'crv' => 'Ed25519',
-            'd' => 'nWGxne_9WmC6hEr0kuwsxERJxWl7MmkZcDusAxyuf2A',
-            'x' => '11qYAYKxCrfVS_7TyWQHOg7hcvPapiMlrwIaaPcHURo',
+            'd'   => 'nWGxne_9WmC6hEr0kuwsxERJxWl7MmkZcDusAxyuf2A',
+            'x'   => '11qYAYKxCrfVS_7TyWQHOg7hcvPapiMlrwIaaPcHURo',
         ]);
 
         $eddsa = new EdDSA();
@@ -55,8 +53,8 @@ final class EdDSASignatureTest extends SignatureTest
         $key = JWK::create([
             'kty' => 'OKP',
             'crv' => 'Ed25519',
-            'd' => 'nWGxne_9WmC6hEr0kuwsxERJxWl7MmkZcDusAxyuf2A',
-            'x' => '11qYAYKxCrfVS_7TyWQHOg7hcvPapiMlrwIaaPcHURo',
+            'd'   => 'nWGxne_9WmC6hEr0kuwsxERJxWl7MmkZcDusAxyuf2A',
+            'x'   => '11qYAYKxCrfVS_7TyWQHOg7hcvPapiMlrwIaaPcHURo',
         ]);
 
         $header = ['alg' => 'EdDSA'];

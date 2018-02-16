@@ -14,13 +14,13 @@ declare(strict_types=1);
 namespace Jose\Bundle\JoseFramework\DataCollector;
 
 use Jose\Component\Signature\JWSBuilder;
-use Jose\Component\Signature\JWSVerifier;
 use Jose\Component\Signature\JWSLoader;
+use Jose\Component\Signature\JWSVerifier;
 use Jose\Component\Signature\Serializer\JWSSerializerManagerFactory;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-final class JWSCollector implements Collector
+class JWSCollector implements Collector
 {
     /**
      * @var JWSSerializerManagerFactory|null
@@ -97,7 +97,7 @@ final class JWSCollector implements Collector
         $data['jws']['jws_loaders'] = [];
         foreach ($this->jwsLoaders as $id => $jwsLoader) {
             $data['jws']['jws_loaders'][$id] = [
-                'serializers' => $jwsLoader->getSerializerManager()->list(),
+                'serializers'          => $jwsLoader->getSerializerManager()->list(),
                 'signature_algorithms' => $jwsLoader->getJwsVerifier()->getSignatureAlgorithmManager()->list(),
             ];
         }

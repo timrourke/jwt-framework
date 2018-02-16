@@ -16,15 +16,12 @@ namespace Jose\Bundle\JoseFramework\DependencyInjection\Source\Signature;
 use Jose\Bundle\JoseFramework\DependencyInjection\Source\Source;
 use Jose\Component\Signature\Serializer\JWSSerializerManager;
 use Jose\Component\Signature\Serializer\JWSSerializerManagerFactory;
-use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
+use Symfony\Component\Config\Definition\Builder\NodeDefinition;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
 
-/**
- * Class JWSSerializer.
- */
-final class JWSSerializer implements Source
+class JWSSerializer implements Source
 {
     /**
      * {@inheritdoc}
@@ -57,35 +54,38 @@ final class JWSSerializer implements Source
     /**
      * {@inheritdoc}
      */
-    public function getNodeDefinition(ArrayNodeDefinition $node)
+    public function getNodeDefinition(NodeDefinition $node)
     {
-        $node
-            ->children()
-                ->arrayNode($this->name())
-                    ->useAttributeAsKey('name')
-                    ->prototype('array')
-                        ->children()
-                            ->booleanNode('is_public')
-                                ->info('If true, the service will be public, else private.')
-                                ->defaultTrue()
-                            ->end()
-                            ->arrayNode('serializers')
-                                ->info('A list of JWS serializers aliases.')
-                                ->useAttributeAsKey('name')
-                                ->treatNullLike(['jws_compact'])
-                                ->prototype('scalar')->end()
-                            ->end()
-                            ->arrayNode('tags')
-                                ->info('A list of tags to be associated to the service.')
-                                ->useAttributeAsKey('name')
-                                ->treatNullLike([])
-                                ->treatFalseLike([])
-                                ->prototype('variable')->end()
-                            ->end()
+        $node->children()
+            ->arrayNode($this->name())
+                ->treatFalseLike([])
+                ->treatNullLike([])
+                ->useAttributeAsKey('name')
+                ->arrayPrototype()
+                    ->children()
+                        ->booleanNode('is_public')
+                            ->info('If true, the service will be public, else private.')
+                            ->defaultTrue()
+                        ->end()
+                        ->arrayNode('serializers')
+                            ->info('A list of JWS serializers aliases.')
+                            ->isRequired()
+                            ->scalarPrototype()->end()
+                            ->treatNullLike([])
+                            ->treatFalseLike([])
+                            ->requiresAtLeastOneElement()
+                        ->end()
+                        ->arrayNode('tags')
+                            ->info('A list of tags to be associated to the service.')
+                            ->useAttributeAsKey('name')
+                            ->treatNullLike([])
+                            ->treatFalseLike([])
+                            ->variablePrototype()->end()
                         ->end()
                     ->end()
                 ->end()
-            ->end();
+            ->end()
+        ->end();
     }
 
     /**

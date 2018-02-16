@@ -18,12 +18,10 @@ use Jose\Component\Signature\Algorithm\None;
 use Jose\Component\Signature\JWS;
 
 /**
- * Class NoneSignatureTest.
- *
  * @group None
  * @group Unit
  */
-final class NoneSignatureTest extends SignatureTest
+class NoneSignatureTest extends SignatureTest
 {
     public function testNoneSignAndVerifyAlgorithm()
     {

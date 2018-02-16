@@ -14,9 +14,9 @@ declare(strict_types=1);
 namespace Jose\Component\Core\Util;
 
 /**
- * Class ECSignature.
+ * @internal
  */
-final class ECSignature
+class ECSignature
 {
     /**
      * @param string $signature

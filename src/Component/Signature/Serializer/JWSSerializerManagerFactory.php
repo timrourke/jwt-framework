@@ -13,10 +13,7 @@ declare(strict_types=1);
 
 namespace Jose\Component\Signature\Serializer;
 
-/**
- * Class JWSSerializerManagerFactory.
- */
-final class JWSSerializerManagerFactory
+class JWSSerializerManagerFactory
 {
     /**
      * @var JWSSerializer[]

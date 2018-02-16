@@ -15,10 +15,7 @@ namespace Jose\Component\Encryption\Algorithm\KeyEncryption;
 
 use AESKW\A192KW as Wrapper;
 
-/**
- * Class ECDHESA192KW.
- */
-final class ECDHESA192KW extends ECDHESAESKW
+class ECDHESA192KW extends ECDHESAESKW
 {
     /**
      * {@inheritdoc}

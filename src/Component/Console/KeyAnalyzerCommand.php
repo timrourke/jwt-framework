@@ -22,10 +22,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-/**
- * Class KeyAnalyzerCommand.
- */
-final class KeyAnalyzerCommand extends Command
+class KeyAnalyzerCommand extends Command
 {
     /**
      * @var KeyAnalyzerManager
@@ -61,8 +58,7 @@ final class KeyAnalyzerCommand extends Command
             ->setName('key:analyze')
             ->setDescription('JWK quality analyzer.')
             ->setHelp('This command will analyze a JWK object and find security issues.')
-            ->addArgument('jwk', InputArgument::REQUIRED, 'The JWK object')
-        ;
+            ->addArgument('jwk', InputArgument::REQUIRED, 'The JWK object');
     }
 
     /**

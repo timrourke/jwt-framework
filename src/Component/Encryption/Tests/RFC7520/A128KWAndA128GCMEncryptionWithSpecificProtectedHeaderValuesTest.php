@@ -22,7 +22,7 @@ use Jose\Component\Encryption\Tests\EncryptionTest;
  *
  * @group RFC7520
  */
-final class A128KWAndA128GCMEncryptionWithSpecificProtectedHeaderValuesTest extends EncryptionTest
+class A128KWAndA128GCMEncryptionWithSpecificProtectedHeaderValuesTest extends EncryptionTest
 {
     /**
      * Please note that we cannot the encryption and get the same result as the example (IV, TAG and other data are always different).
@@ -37,7 +37,7 @@ final class A128KWAndA128GCMEncryptionWithSpecificProtectedHeaderValuesTest exte
             'kid' => '81b20965-8332-43d9-a468-82160ad91ac8',
             'use' => 'enc',
             'alg' => 'A128KW',
-            'k' => 'GZy6sIZ6wl9NJOKB-jnmVQ',
+            'k'   => 'GZy6sIZ6wl9NJOKB-jnmVQ',
         ]);
 
         $protectedHeader = [
@@ -94,7 +94,7 @@ final class A128KWAndA128GCMEncryptionWithSpecificProtectedHeaderValuesTest exte
             'kid' => '81b20965-8332-43d9-a468-82160ad91ac8',
             'use' => 'enc',
             'alg' => 'A128KW',
-            'k' => 'GZy6sIZ6wl9NJOKB-jnmVQ',
+            'k'   => 'GZy6sIZ6wl9NJOKB-jnmVQ',
         ]);
 
         $protectedHeader = [

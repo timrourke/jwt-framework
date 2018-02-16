@@ -19,7 +19,7 @@ use Jose\Component\KeyManagement\KeyAnalyzer\KeyAnalyzerManager;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-final class KeyCollector implements Collector
+class KeyCollector implements Collector
 {
     /**
      * @var KeyAnalyzerManager|null
@@ -53,7 +53,7 @@ final class KeyCollector implements Collector
         $data['key']['jwk'] = [];
         foreach ($this->jwks as $id => $jwk) {
             $data['key']['jwk'][$id] = [
-                'jwk' => $jwk,
+                'jwk'     => $jwk,
                 'analyze' => null === $this->jwkAnalyzerManager ? [] : $this->jwkAnalyzerManager->analyze($jwk),
             ];
         }
@@ -73,7 +73,7 @@ final class KeyCollector implements Collector
                 }
             }
             $data['key']['jwkset'][$id] = [
-                'jwkset' => $jwkset,
+                'jwkset'  => $jwkset,
                 'analyze' => $analyze,
             ];
         }

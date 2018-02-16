@@ -15,15 +15,12 @@ namespace Jose\Bundle\JoseFramework\DependencyInjection\Source\KeyManagement;
 
 use Jose\Bundle\JoseFramework\DependencyInjection\Source\Source;
 use Jose\Component\Console\JKULoaderCommand;
-use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
+use Symfony\Component\Config\Definition\Builder\NodeDefinition;
+use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
-use Symfony\Component\Config\FileLocator;
 
-/**
- * Class JKUSource.
- */
-final class JKUSource implements Source
+class JKUSource implements Source
 {
     /**
      * {@inheritdoc}
@@ -52,7 +49,7 @@ final class JKUSource implements Source
     /**
      * {@inheritdoc}
      */
-    public function getNodeDefinition(ArrayNodeDefinition $node)
+    public function getNodeDefinition(NodeDefinition $node)
     {
         $node
             ->children()

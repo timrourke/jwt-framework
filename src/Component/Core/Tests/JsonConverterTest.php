@@ -17,12 +17,10 @@ use Jose\Component\Core\Converter\StandardConverter;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class JsonConverterTest.
- *
  * @group Unit
  * @group JsonConverter
  */
-final class JsonConverterTest extends TestCase
+class JsonConverterTest extends TestCase
 {
     /**
      * @test

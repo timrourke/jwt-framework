@@ -13,10 +13,7 @@ declare(strict_types=1);
 
 namespace Jose\Component\Checker;
 
-/**
- * Class InvalidHeaderException.
- */
-final class InvalidHeaderException extends \Exception
+class InvalidHeaderException extends \Exception
 {
     /**
      * @var string

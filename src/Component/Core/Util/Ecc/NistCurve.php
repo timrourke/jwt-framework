@@ -38,11 +38,9 @@ namespace Jose\Component\Core\Util\Ecc;
  */
 
 /**
- * This class encapsulates the NIST recommended curves
- * - fields are Mersenne primes, i.e.
- * for some p, Mersenne_prime = 2^p - 1.
+ * @internal
  */
-final class NistCurve
+class NistCurve
 {
     /**
      * Returns an NIST P-256 curve.

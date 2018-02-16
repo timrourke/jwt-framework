@@ -18,10 +18,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-/**
- * Class EcKeyGeneratorCommand.
- */
-final class EcKeyGeneratorCommand extends GeneratorCommand
+class EcKeyGeneratorCommand extends GeneratorCommand
 {
     /**
      * {@inheritdoc}

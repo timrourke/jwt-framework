@@ -25,7 +25,7 @@ use Jose\Component\Signature\Tests\SignatureTest;
  * @group HMAC
  * @group RFC7520
  */
-final class HMACSignatureTest extends SignatureTest
+class HMACSignatureTest extends SignatureTest
 {
     /**
      * @see https://tools.ietf.org/html/rfc7520#section-4.4
@@ -44,7 +44,7 @@ final class HMACSignatureTest extends SignatureTest
             'kid' => '018c0ae5-4d9b-471b-bfd6-eef314bc7037',
             'use' => 'sig',
             'alg' => 'HS256',
-            'k' => 'hJtXIZ2uSN5kbQfbtTNWbpdmhkV8FJG-Onbc6mxCcYg',
+            'k'   => 'hJtXIZ2uSN5kbQfbtTNWbpdmhkV8FJG-Onbc6mxCcYg',
         ]);
 
         /*
@@ -104,7 +104,7 @@ final class HMACSignatureTest extends SignatureTest
             'kid' => '018c0ae5-4d9b-471b-bfd6-eef314bc7037',
             'use' => 'sig',
             'alg' => 'HS256',
-            'k' => 'hJtXIZ2uSN5kbQfbtTNWbpdmhkV8FJG-Onbc6mxCcYg',
+            'k'   => 'hJtXIZ2uSN5kbQfbtTNWbpdmhkV8FJG-Onbc6mxCcYg',
         ]);
 
         /*
@@ -165,7 +165,7 @@ final class HMACSignatureTest extends SignatureTest
             'kid' => '018c0ae5-4d9b-471b-bfd6-eef314bc7037',
             'use' => 'sig',
             'alg' => 'HS256',
-            'k' => 'hJtXIZ2uSN5kbQfbtTNWbpdmhkV8FJG-Onbc6mxCcYg',
+            'k'   => 'hJtXIZ2uSN5kbQfbtTNWbpdmhkV8FJG-Onbc6mxCcYg',
         ]);
 
         /*
@@ -221,7 +221,7 @@ final class HMACSignatureTest extends SignatureTest
             'kid' => '018c0ae5-4d9b-471b-bfd6-eef314bc7037',
             'use' => 'sig',
             'alg' => 'HS256',
-            'k' => 'hJtXIZ2uSN5kbQfbtTNWbpdmhkV8FJG-Onbc6mxCcYg',
+            'k'   => 'hJtXIZ2uSN5kbQfbtTNWbpdmhkV8FJG-Onbc6mxCcYg',
         ]);
 
         /*

@@ -15,10 +15,7 @@ namespace Jose\Component\Signature\Algorithm;
 
 use Jose\Component\Signature\Util\RSA as JoseRSA;
 
-/**
- * Class RS512.
- */
-final class RS512 extends RSA
+class RS512 extends RSA
 {
     /**
      * @return string

@@ -18,12 +18,10 @@ use Jose\Component\KeyManagement\KeyAnalyzer\MessageBag;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class JWKAnalyzerTest.
- *
  * @group Unit
  * @group JWKAnalyzer
  */
-final class MessageBagTest extends TestCase
+class MessageBagTest extends TestCase
 {
     /**
      * @test

@@ -16,13 +16,11 @@ namespace Jose\Component\Encryption\Util;
 use Base64Url\Base64Url;
 
 /**
- * Class ConcatKDF.
- *
- * This class is used by the ECDH-ES algorithms
+ * @internal
  *
  * @see https://tools.ietf.org/html/rfc7518#section-4.6.2
  */
-final class ConcatKDF
+class ConcatKDF
 {
     /**
      * Key Derivation Function.

@@ -15,10 +15,7 @@ namespace Jose\Component\Encryption\Algorithm\KeyEncryption;
 
 use AESKW\A192KW as Wrapper;
 
-/**
- * Class PBES2HS384A192KW.
- */
-final class PBES2HS384A192KW extends PBES2AESKW
+class PBES2HS384A192KW extends PBES2AESKW
 {
     /**
      * {@inheritdoc}

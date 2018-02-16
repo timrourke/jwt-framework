@@ -16,10 +16,7 @@ namespace Jose\Component\Encryption;
 use Jose\Component\Checker\HeaderCheckerManagerFactory;
 use Jose\Component\Encryption\Serializer\JWESerializerManagerFactory;
 
-/**
- * Class JWELoaderFactory.
- */
-final class JWELoaderFactory
+class JWELoaderFactory
 {
     /**
      * @var JWEDecrypterFactory

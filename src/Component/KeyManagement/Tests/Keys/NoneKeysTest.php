@@ -11,7 +11,7 @@ declare(strict_types=1);
  * of the MIT license.  See the LICENSE file for details.
  */
 
-namespace Jose\Test\Unit\Keys;
+namespace Jose\Component\KeyManagement\Tests\Keys;
 
 use Jose\Component\Core\JWK;
 use Jose\Component\KeyManagement\JWKFactory;
@@ -21,7 +21,7 @@ use PHPUnit\Framework\TestCase;
  * @group NoneKeys
  * @group Unit
  */
-final class NoneKeysTest extends TestCase
+class NoneKeysTest extends TestCase
 {
     /**
      * @see https://tools.ietf.org/html/rfc7638#section-3.1

@@ -16,11 +16,9 @@ namespace Jose\Component\Signature\Tests;
 use Jose\Component\Signature\JWS;
 
 /**
- * Class JWSFlattenedTest.
- *
  * @group Functional
  */
-final class JWSFlattenedTest extends SignatureTest
+class JWSFlattenedTest extends SignatureTest
 {
     /**
      * @see https://tools.ietf.org/html/rfc7516#appendix-A.5

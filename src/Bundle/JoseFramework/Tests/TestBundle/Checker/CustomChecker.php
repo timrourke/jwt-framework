@@ -16,10 +16,7 @@ namespace Jose\Bundle\JoseFramework\Tests\TestBundle\Checker;
 use Jose\Component\Checker\ClaimChecker;
 use Jose\Component\Checker\HeaderChecker;
 
-/**
- * Class CustomChecker.
- */
-final class CustomChecker implements ClaimChecker, HeaderChecker
+class CustomChecker implements ClaimChecker, HeaderChecker
 {
     public function checkClaim($value)
     {

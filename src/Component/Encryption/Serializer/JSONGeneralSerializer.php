@@ -18,10 +18,7 @@ use Jose\Component\Core\Converter\JsonConverter;
 use Jose\Component\Encryption\JWE;
 use Jose\Component\Encryption\Recipient;
 
-/**
- * Class JSONGeneralSerializer.
- */
-final class JSONGeneralSerializer implements JWESerializer
+class JSONGeneralSerializer implements JWESerializer
 {
     public const NAME = 'jwe_json_general';
 
@@ -67,8 +64,8 @@ final class JSONGeneralSerializer implements JWESerializer
 
         $data = [
             'ciphertext' => Base64Url::encode($jwe->getCiphertext()),
-            'iv' => Base64Url::encode($jwe->getIV()),
-            'tag' => Base64Url::encode($jwe->getTag()),
+            'iv'         => Base64Url::encode($jwe->getIV()),
+            'tag'        => Base64Url::encode($jwe->getTag()),
         ];
         if (null !== $jwe->getAAD()) {
             $data['aad'] = Base64Url::encode($jwe->getAAD());
@@ -125,7 +122,7 @@ final class JSONGeneralSerializer implements JWESerializer
     }
 
     /**
-     * @param $data
+     * @param mixed $data
      */
     private function checkData($data)
     {

@@ -15,10 +15,7 @@ namespace Jose\Bundle\JoseFramework\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * Class JWKSetController.
- */
-final class JWKSetController
+class JWKSetController
 {
     /**
      * @var string
@@ -51,7 +48,7 @@ final class JWKSetController
             $this->jwkset,
             Response::HTTP_OK,
             [
-                'Content-Type' => 'application/jwk-set+json; charset=UTF-8',
+                'Content-Type'  => 'application/jwk-set+json; charset=UTF-8',
                 'Cache-Control' => sprintf('public, max-age=%d, must-revalidate, no-transform', $this->maxAge),
             ]
         );

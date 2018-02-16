@@ -25,7 +25,7 @@ use Symfony\Component\Console\Output\BufferedOutput;
  * @group Console
  * @group KeyCreationCommand
  */
-final class KeyCreationCommandTest extends TestCase
+class KeyCreationCommandTest extends TestCase
 {
     /**
      * @test
@@ -77,7 +77,7 @@ final class KeyCreationCommandTest extends TestCase
     {
         $converter = new StandardConverter();
         $input = new ArrayInput([
-            'curve' => 'P-256',
+            'curve'       => 'P-256',
             '--random_id' => true,
         ]);
         $output = new BufferedOutput();
@@ -112,7 +112,7 @@ final class KeyCreationCommandTest extends TestCase
     {
         $converter = new StandardConverter();
         $input = new ArrayInput([
-            'size' => 256,
+            'size'        => 256,
             '--random_id' => true,
         ]);
         $output = new BufferedOutput();
@@ -189,7 +189,7 @@ final class KeyCreationCommandTest extends TestCase
     {
         $converter = new StandardConverter();
         $input = new ArrayInput([
-            'curve' => 'X25519',
+            'curve'       => 'X25519',
             '--random_id' => true,
         ]);
         $output = new BufferedOutput();
@@ -242,7 +242,7 @@ final class KeyCreationCommandTest extends TestCase
     {
         $converter = new StandardConverter();
         $input = new ArrayInput([
-            'size' => 1024,
+            'size'        => 1024,
             '--random_id' => true,
         ]);
         $output = new BufferedOutput();

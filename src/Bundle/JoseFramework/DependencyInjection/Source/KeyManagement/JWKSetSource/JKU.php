@@ -21,10 +21,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
 
-/**
- * Class JKU.
- */
-final class JKU extends AbstractSource implements JWKSetSource
+class JKU extends AbstractSource implements JWKSetSource
 {
     /**
      * {@inheritdoc}
@@ -70,7 +67,7 @@ final class JKU extends AbstractSource implements JWKSetSource
                     ->treatFalseLike([])
                     ->info('Header key/value pairs added to the request.')
                     ->useAttributeAsKey('name')
-                    ->prototype('variable')->end()
+                    ->variablePrototype()->end()
                 ->end()
             ->end();
     }

@@ -18,9 +18,9 @@ use Jose\Component\Core\Util\Hash;
 use Jose\Component\Core\Util\RSAKey;
 
 /**
- * Class RSACrypt.
+ * @internal
  */
-final class RSACrypt
+class RSACrypt
 {
     /**
      * Optimal Asymmetric Encryption Padding (OAEP).
@@ -118,9 +118,6 @@ final class RSACrypt
         $c = BigInteger::createFromBinaryString($c);
         $m = self::getRSADP($key, $c);
         $em = self::convertIntegerToOctetString($m, $key->getModulusLength());
-        if (false === $em) {
-            throw new \InvalidArgumentException('Unable to decrypt');
-        }
 
         if (0 != ord($em[0]) || ord($em[1]) > 2) {
             throw new \InvalidArgumentException('Unable to decrypt');
@@ -263,7 +260,7 @@ final class RSACrypt
     {
         $t = '';
         $count = ceil($maskLen / $mgfHash->getLength());
-        for ($i = 0; $i < $count; ++$i) {
+        for ($i = 0; $i < $count; $i++) {
             $c = pack('N', $i);
             $t .= $mgfHash->hash($mgfSeed.$c);
         }

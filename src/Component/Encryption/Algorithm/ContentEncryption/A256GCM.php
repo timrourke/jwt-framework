@@ -13,10 +13,7 @@ declare(strict_types=1);
 
 namespace Jose\Component\Encryption\Algorithm\ContentEncryption;
 
-/**
- * Class A256GCM.
- */
-final class A256GCM extends AESGCM
+class A256GCM extends AESGCM
 {
     /**
      * {@inheritdoc}

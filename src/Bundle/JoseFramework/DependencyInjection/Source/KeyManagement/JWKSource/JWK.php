@@ -20,10 +20,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
 
-/**
- * Class JWK.
- */
-final class JWK extends AbstractSource implements JWKSource
+class JWK extends AbstractSource implements JWKSource
 {
     /**
      * {@inheritdoc}

@@ -13,10 +13,7 @@ declare(strict_types=1);
 
 namespace Jose\Component\Signature\Algorithm;
 
-/**
- * Class ES384.
- */
-final class ES384 extends ECDSA
+class ES384 extends ECDSA
 {
     /**
      * @return string

@@ -18,10 +18,7 @@ use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
 
-/**
- * Class EncryptionSerializerCompilerPass.
- */
-final class EncryptionSerializerCompilerPass implements CompilerPassInterface
+class EncryptionSerializerCompilerPass implements CompilerPassInterface
 {
     /**
      * {@inheritdoc}

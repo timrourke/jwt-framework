@@ -17,12 +17,10 @@ use Base64Url\Base64Url;
 use Jose\Component\Signature\JWS;
 
 /**
- * Class JWSTest.
- *
  * @group JWS
  * @group Unit
  */
-final class JWSTest extends SignatureTest
+class JWSTest extends SignatureTest
 {
     public function testJWS()
     {
